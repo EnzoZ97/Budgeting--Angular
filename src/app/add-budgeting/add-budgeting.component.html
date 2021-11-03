@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h1 class="text-center text-light">Add budgeting</h1>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card p-3">
+                <input type="number" class="mt-3 form-control form-control-lg text-center"
+                [(ngModel)]="expense">
+                <span *ngIf="IsHigher" class="text-center text-danger">The expense should be <strong> higher to 0</strong></span>
+
+                <div class="d-grid mt-3">
+                    <button class="button btn btn-primary" (click)="check()">Accept</button>
+                </div>
+            </div>    
+            
+        </div>
+    </div>
+
+</div>
+

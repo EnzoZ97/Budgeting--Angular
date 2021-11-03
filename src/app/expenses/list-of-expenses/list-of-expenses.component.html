@@ -1,0 +1,16 @@
+<h3 class="text-center">List of expenses</h3>
+<hr/>
+<div class="row">
+    <div class="col-6">
+        <p class="text-center alert-success rounded p-2">Expense: <strong>$ {{Total}} </strong> </p>
+    </div>
+    <div class="col-6">
+        <p class="text-center alert-secondary rounded p-2">leftover: <strong>$ {{subtract}} </strong> </p>
+    </div>
+</div>
+<div class="row" *ngFor="let value of list_expenses">
+    <div class="list mb-2">
+        <p class="float-start mt-2"><strong> {{value.expense}} </strong></p>
+        <p class="float-end bg-secondary price text-light"><strong> ${{value.amount}} </strong></p>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h1 class="text-center text-light">Expenses</h1>
+    <div class="row bg-light p-3 rounded">     
+        <div class="col-6">
+            <h3 class="text-center">Add expenses</h3>
+            <hr/>
+            <div class="alert-danger rounded p-2 text-center" *ngIf="Error">
+                {{Error_message}}
+            </div>
+            <div class="alert-primary rounded p-2 text-center" *ngIf="Notice">
+                {{Error_message}}
+            </div>
+            <h5 class="mt-3">Expense</h5>
+            <input type="text" class="form-control form-control-lg"
+            placeholder="For example: food..." [(ngModel)]="Expense">
+            <h5 class="mt-3">Amount</h5>
+            <input type="number" class="form-control form-control-lg" [(ngModel)]="Amount">
+            <div class="d-grid mt-5">
+                <button class="button btn btn-primary" (click)="AddBudgeting()">Add</button>
+            </div>
+        </div>
+        <div class="col-6">
+            <app-list-of-expenses [list_expenses]="list"
+                                    [Total] = "Amount_of_expense" 
+                                    [subtract]="subtract"></app-list-of-expenses>
+        </div>       
+    </div>
+</div>
